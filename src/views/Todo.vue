@@ -7,7 +7,7 @@
 			</header>
 			<section class="main">
 				<ul class="todo-list">
-    			<li v-for="todo in filteredTodos" :class="{completed: todo.completed, editing: todo == editedTodo}">
+    			<li v-for="todo in filteredTodos" :key="todo.id" :class="{completed: todo.completed, editing: todo == editedTodo}">
     				<div class="view">
     					<input class="toggle" type="checkbox" v-model="todo.completed" />
     					<label @dblclick="editTodo(todo)">{{ todo.title }}</label>
@@ -44,7 +44,6 @@
 </template>
 
 <script>
-
 const STORAGE_KEY = "todo-storage";
 
 export default {
@@ -54,7 +53,7 @@ export default {
       newTodo: "",
       todos: [],
       editedTodo: null,
-      visibility: 'all'
+      visibility: "all"
     };
   },
   created() {
@@ -62,16 +61,16 @@ export default {
   },
   computed: {
     filteredTodos() {
-      if(this.visibility === "all") {
+      if (this.visibility === "all") {
         return this.todos;
-      }else if(this.visibility === "active"){
+      } else if (this.visibility === "active") {
         return this.todos.filter(function(todo) {
           return !todo.completed;
         });
-      }else if(this.visibility === "completed"){
+      } else if (this.visibility === "completed") {
         return this.todos.filter(function(todo) {
           return todo.completed;
-        })
+        });
       }
     }
   },
