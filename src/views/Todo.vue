@@ -6,8 +6,6 @@
 				<input class="new-todo" v-model="newTodo" v-on:keyup.enter="addTodo" placeholder="What needs to be done?" autofocus>
 			</header>
 			<section class="main">
-				<input id="toggle-all" class="toggle-all" type="checkbox">
-				<label for="toggle-all">Mark all as complete</label>
 				<ul class="todo-list">
     			<li v-for="todo in filteredTodos" :class="{completed: todo.completed, editing: todo == editedTodo}">
     				<div class="view">
@@ -42,28 +40,15 @@
         </ul>
       </footer>
 		</section>
-		<footer class="info">
-			<p>Double-click to edit a todo</p>
-			<p>Created by <a href="http://sindresorhus.com">Sindre Sorhus</a></p>
-			<p>Edited by Tony Chew</p>
-			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
-		</footer>
-    <!-- <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
 
 const STORAGE_KEY = "todo-storage";
 
 export default {
   name: "home",
-  // components: {
-  //   HelloWorld
-  // },
   data() {
     return {
       newTodo: "",
@@ -94,7 +79,7 @@ export default {
     addTodo() {
       this.todos.push({
         title: this.newTodo,
-        completed: "false",
+        completed: false,
         id: this.todos.length
       });
       this.newTodo = "";
