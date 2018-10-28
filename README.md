@@ -6,3 +6,5 @@ To run application for development:
 
 To compile application for deployment:
 > npm run build
+> commit to github
+> heroku will automate and use dist folder for display
