@@ -11,7 +11,7 @@
     				<div class="view">
     					<input class="toggle" type="checkbox" v-model="todo.completed" />
     					<label @dblclick="editTodo(todo)">{{ todo.title }}</label>
-    					<button class="destroy" @click="removeTodo(todos)"></button>
+    					<button class="destroy" @click="removeTodo(todo)"></button>
     				</div>
     				<input class="edit" type="text" v-model="todo.title" @blur="doneEdit(todo)" @keyup.enter="doneEdit(todo)">
     			</li>
@@ -85,7 +85,8 @@ export default {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.todos));
     },
     removeTodo(todo) {
-      this.todos.splice(this.todos.indexOf(todo), 1);
+      var index = this.todos.indexOf(todo);
+      this.todos.splice(index, 1);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.todos));
     },
     editTodo(todo) {
