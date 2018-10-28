@@ -9,20 +9,22 @@
 </template>
 <style lang="stylus">
 
-#app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-
-#nav
-  padding 30px
-  a
-    font-weight bold
-    color #2c3e50
-    &.router-link-exact-active
-      color #42b983
+// #app
+//   font-family 'Avenir', Helvetica, Arial, sans-serif
+//   -webkit-font-smoothing antialiased
+//   -moz-osx-font-smoothing grayscale
+//   text-align center
+//   color #2c3e50
+//
+// #nav
+//   padding 30px
+//
+//   a
+//     font-weight bold
+//     color #2c3e50
+//
+//     &.router-link-exact-active
+//       color #42b983
 
 html,
 body
@@ -68,30 +70,32 @@ body
     position relative
     box-shadow 0 2px 4px 0 rgba(0, 0, 0, 0.2),
              0 25px 50px 0 rgba(0, 0, 0, 0.1)
+
     input
-        &::-webkit-input-placeholder
-            font-style italic
-            font-weight 300
-            color #e6e6e6
-        &::-moz-placeholder
-            font-style italic
-            font-weight 300
-            color #e6e6e6
-        &::input-placeholder
-            font-style italic
-            font-weight 300
-            color #e6e6e6
+      &::-webkit-input-placeholder
+          font-style italic
+          font-weight 300
+          color #e6e6e6
+      &::-moz-placeholder
+          font-style italic
+          font-weight 300
+          color #e6e6e6
+      &::input-placeholder
+          font-style italic
+          font-weight 300
+          color #e6e6e6
+
     h1
-        position absolute
-        top -155px
-        width 100%
-        font-size 100px
-        font-weight 100
-        text-align center
-        color rgba(175, 47, 47, 0.15)
-        -webkit-text-rendering optimizeLegibility
-        -moz-text-rendering optimizeLegibility
-        text-rendering optimizeLegibility
+      position absolute
+      top -155px
+      width 100%
+      font-size 100px
+      font-weight 100
+      text-align center
+      color rgba(175, 47, 47, 0.15)
+      -webkit-text-rendering optimizeLegibility
+      -moz-text-rendering optimizeLegibility
+      text-rendering optimizeLegibility
 
 .new-todo,
 .edit
@@ -127,6 +131,7 @@ body
     border none
     opacity 0
     position absolute
+
     & + label
         width 60px
         height 34px
@@ -136,11 +141,13 @@ body
         left -13px
         -webkit-transform rotate(90deg)
         transform rotate(90deg)
+
         &:before
             content '❯'
             font-size 22px
             color #e6e6e6
             padding 10px 27px 10px 27px
+
     &:checked
         & + label
             &:before
@@ -150,22 +157,28 @@ body
     margin 0
     padding 0
     list-style none
+
     li
         position relative
         font-size 24px
         border-bottom 1px solid #ededed
+
         &:last-child
             border-bottom none
+
         &.editing
             border-bottom none
             padding 0
+
             .edit
                 display block
                 width 506px
                 padding 12px 16px
                 margin 0 0 0 43px
+
             .view
                 display none
+
             &:last-child
                 margin-bottom -1px
         .toggle
@@ -180,10 +193,12 @@ body
             -webkit-appearance none
             appearance none
             opacity 0
+
             & + label
                 background-image url('data:image/svg+xml')
                 background-repeat no-repeat
                 background-position center left
+
             &:checked
                 & + label
                     background-image url('data:image/svg+xml')
@@ -194,10 +209,12 @@ body
             display block
             line-height 1.2
             transition color 0.4s
+
         &.completed
             label
                 color #d9d9d9
                 text-decoration line-through
+
         .destroy
             display none
             position absolute
@@ -227,6 +244,7 @@ body
     height 20px
     text-align center
     border-top 1px solid #e6e6e6
+
     &:before
         content ''
         position absolute
@@ -401,7 +419,7 @@ hr
             left 8px
 
 
-@media screen and (-webkit-min-device-pixel-ratio:0) 	
+@media screen and (-webkit-min-device-pixel-ratio:0)
   .toggle-all, .todo-list li .toggle
     background none
 
